@@ -49,10 +49,16 @@ Citizen.CreateThread(function()
 			velBuffer[2] = velBuffer[1]
 			velBuffer[1] = GetEntityVelocity(car)
 				
+				TriggerEvent('chat:addMessage', {
+  color = { 255, 0, 0},
+  multiline = true,
+  args = {"Me", "Please be careful to not step on too many snails!"}
+})
+				
 			if IsControlJustReleased(0, 311) then
 				beltOn = not beltOn				  
-				if beltOn then TriggerEvent('chatMessage', Cfg.Strings.belt_on)
-				else TriggerEvent('chatMessage', Cfg.Strings.belt_off) end 
+				if beltOn then TriggerEvent('chat:addMessage', { color = {255,0,0}, multiline = true, args = {"ME", "Cfg.Strings.belt_on"} })
+				else TriggerEvent('chatMessage', { color = {255,0,0}, multiline = true, args = {"ME", "Cfg.Strings.belt_off"} }) end 
 			end
 			
 		elseif wasInCar then
