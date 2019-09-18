@@ -52,8 +52,8 @@ Citizen.CreateThread(function()
 				
 			if IsControlJustReleased(0, 311) then
 				beltOn = not beltOn				  
-				if beltOn then TriggerEvent('chat:addMessage', { color = {255,0,0}, multiline = true, args = { _U('message_title'), _U('message_on') } })
-				else TriggerEvent('chat:addMessage', { color = {255,0,0}, multiline = false, args = { _U('message_title'), _U('message_off') } }) end 
+				if beltOn then TriggerEvent('chat:addMessage', { color = {255,0,0}, multiline = true, args = { "Seatbelt", "On" } })
+				else TriggerEvent('chat:addMessage', { color = {255,0,0}, multiline = false, args = { "Seatbelt:", "Off" } }) end 
 			end
 			
 		elseif wasInCar then
